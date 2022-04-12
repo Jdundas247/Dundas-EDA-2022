@@ -1,9 +1,6 @@
 library(tidyverse, ggplot, readxl)
-library(wesanderson)
 # xlsx files
 my_data <- read_excel( file.choose("ZebrafishQuantData_test.xlsx"))
-#Color Range
-colors_new<-colorRampPalette(c("blue", "red"))
 #Renaming
 zf_data<-rename(my_data, total_length = TL, 
                 yolk_height = YolkHt, tail_length = "Lttailfromtipmsc(mm)", 
@@ -136,6 +133,7 @@ ggplot(data = zf_data) +
                   ymin = ci_lower_limit),
     color = "red", size=2)+
   theme_gray(base_size = 24)
+
 ggsave("maxvel_graph.png",height=6,width=12, units = "in", dpi = 400)
 
 alarm_mv <- c(rnorm(75, mean = 3.263073714, sd = 4.4816925))
