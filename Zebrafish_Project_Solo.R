@@ -34,23 +34,31 @@ zf_summary_yolk <-
     ci_lower_limit = mean_yolk - t.score * sem_yolk)
 
 ggplot(data = zf_data) +
-  geom_jitter(mapping = aes(x = cue_type, y = yolk_height, color = hatch_time_hours), width = 0.3)+
+  geom_jitter(mapping = aes(x = cue_type, 
+                            y = yolk_height, color = hatch_time_hours), width = 0.3)+
   geom_point(
     data = zf_summary_yolk, 
-    mapping = aes(x = cue_type, y = mean_yolk, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_yolk, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
-    color = "red", size=2)+ scale_color_gradient(low = "blue", high = "green")+
+    color = "red", size=3)+
+  scale_color_gradient(low = "blue", high = "green")+
   geom_linerange(
     data = zf_summary_yolk, 
-    mapping = aes(x = cue_type, y = mean_yolk, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_yolk, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
     color = "red", size=1)
 
+ggsave("Yolk_zf_graph.png",height=6,width=12, units = "in", dpi = 400)
+
 #Comparing Hatch Time and Cue Type
 ggplot(data = zf_data) +
-  geom_histogram(mapping = aes(x = hatch_time_hours), binwidth = 6)+
+  geom_histogram(mapping = aes(x = hatch_time_hours), 
+                 binwidth = 6)+
   facet_wrap(~ cue_type, scales = "free_y") +
   theme_gray(base_size = 24)
+
 ggsave("histogram_zf.png",height=6,width=12, units = "in", dpi = 400)
 
 alarm_hatch <- c(rnorm(75, mean = 39.88571429, sd = 43.525))
@@ -68,19 +76,25 @@ zf_summaryvel <-
     ci_lower_limit = mean_vel - t.score * sem_vel)
 
 ggplot(data = zf_data) +
-  geom_jitter(mapping = aes(x = cue_type, y = average_velocity, color = hatch_time_hours), width = 0.3)+
+  geom_jitter(mapping = aes(x = cue_type, 
+              y = average_velocity, color = hatch_time_hours), width = 0.3)+
   geom_point(
     data = zf_summaryvel, 
-    mapping = aes(x = cue_type, y = mean_vel, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_vel, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
-    color = "red", size=2)+scale_color_gradient(low = "blue", high = "green")+
+    color = "red", size=3)+
+  scale_color_gradient(low = "blue", high = "green")+
   geom_linerange(
     data = zf_summaryvel, 
-    mapping = aes(x = cue_type, y = mean_vel, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_vel, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
     color = "red", size=1) +
   theme_gray(base_size = 24)
-ggsave("avgvel_graph.png",height=6,width=12, units = "in", dpi = 400)
+
+ggsave("avgvel_graph.png",height=6,width=12, 
+       units = "in", dpi = 400)
 #Average length comparison
 zf_summary_tl <-
   summarize(
@@ -94,15 +108,19 @@ ggplot(data = zf_data) +
   geom_jitter(mapping = aes(x = cue_type, y = total_length, color = hatch_time_hours), width = 0.3)+
   geom_point(
     data = zf_summary_tl, 
-    mapping = aes(x = cue_type, y = mean_length, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_length, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
-    color = "red", size=2)+scale_color_gradient(low = "blue", high = "green")+
+    color = "red", size=3)+
+  scale_color_gradient(low = "blue", high = "green")+
   geom_linerange(
     data = zf_summary_tl, 
-    mapping = aes(x = cue_type, y = mean_length, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_length, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
     color = "red", size=1) +
   theme_gray(base_size = 24)
+
 ggsave("avgleng_graph.png",height=6,width=12, units = "in", dpi = 400)
 
 #T Test
@@ -124,14 +142,17 @@ ggplot(data = zf_data) +
               width = 0.3, size=2)+
   geom_point(
     data = zf_summary_vmax, 
-    mapping = aes(x = cue_type, y = mean_vmax, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_vmax, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
-    color = "red", size=3)+scale_color_gradient(low = "blue", high = "green")+
+    color = "red", size=3)+
+  scale_color_gradient(low = "blue", high = "green")+
   geom_linerange(
     data = zf_summary_vmax, 
-    mapping = aes(x = cue_type, y = mean_vmax, ymax = ci_upper_limit, 
+    mapping = aes(x = cue_type, y = mean_vmax, 
+                  ymax = ci_upper_limit, 
                   ymin = ci_lower_limit),
-    color = "red", size=2)+
+    color = "red", size=1)+
   theme_gray(base_size = 24)
 
 ggsave("maxvel_graph.png",height=6,width=12, units = "in", dpi = 400)
