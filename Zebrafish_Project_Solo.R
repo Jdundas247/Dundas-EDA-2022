@@ -1,7 +1,9 @@
-library(tidyverse, ggplot, readxl)
-# xlsx files
+#Install packages and load/modify data
+library(tidyverse, ggplot)
+library(readxl)
+
 my_data <- read_excel( file.choose("ZebrafishQuantData_test.xlsx"))
-#Renaming
+
 zf_data<-rename(my_data, total_length = TL, 
                 yolk_height = YolkHt, tail_length = "Lttailfromtipmsc(mm)", 
                 body_cavity_lenth = BodyCavLen, trunk_total = TrunkTotal, 
@@ -14,16 +16,14 @@ view(zf_data)
 summary(zf_data)
 length(zf_data$max_velocity)
 #Summarizing / grouping by cue type for future code/error bars
-
 zf_group<-group_by(zf_data, cue_type)
-zf_group
 #Calculating T score
 alpha = 0.05
 degrees.freedom = length(zf_data) - 1
 t.score = qt(p=alpha/2, df=degrees.freedom,lower.tail=F)
 print(t.score)
-
 #Error is t 
+
 #Yolk Height, added cue and hatch time
 zf_summary_yolk <-
   summarize(
