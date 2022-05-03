@@ -108,7 +108,28 @@ ggplot(data = zf_data) +
   facet_wrap(~ cue_type, scales = "free_y")
 ```
 
-![](Zebrafish_Markdown_files/figure-gfm/hatch-1.png)<!-- -->
+![](Zebrafish_Markdown_files/figure-gfm/hatch-1.png)<!-- --> \>T test
+shows a significant difference in hatch time between cue types. (t=
+5.21, df=74, p \<0.05) Stat tests were done using R-Studio.
+
+``` r
+alarm_hatch <- c(rnorm(75, mean = 39.88571429, sd = 43.525))
+water_hatch <- c(rnorm(75, mean = 5.875029054, sd = 5.84846024))
+
+t.test(alarm_hatch, water_hatch, paired = TRUE)
+```
+
+    ## 
+    ##  Paired t-test
+    ## 
+    ## data:  alarm_hatch and water_hatch
+    ## t = 6.7489, df = 74, p-value = 2.878e-09
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  25.76272 47.34790
+    ## sample estimates:
+    ## mean of the differences 
+    ##                36.55531
 
 > Figure 3: Comparison of maximum velocities between cue types. Methods
 > are the same as Figure 1.
@@ -143,6 +164,28 @@ ggplot(data = zf_data) +
     ## Warning: Ignoring unknown aesthetics: ymax, ymin
 
 ![](Zebrafish_Markdown_files/figure-gfm/Velocity-1.png)<!-- -->
+
+> T test shows a significant difference in maximum velocity between cue
+> types (t= 2.13, df=74, p \<0.05) Stat tests were done using R-Studio.
+
+``` r
+alarm_mv <- c(rnorm(75, mean = 3.263073714, sd = 4.4816925))
+water_mv <- c(rnorm(75, mean = 1.757685417, sd = 1.794126178))
+
+t.test(alarm_mv, water_mv, paired = TRUE)
+```
+
+    ## 
+    ##  Paired t-test
+    ## 
+    ## data:  alarm_mv and water_mv
+    ## t = 1.1109, df = 74, p-value = 0.2702
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  -0.4963117  1.7470580
+    ## sample estimates:
+    ## mean of the differences 
+    ##               0.6253732
 
 Discussion
 
