@@ -43,7 +43,7 @@ Introduction
 > affect zebrafish in the wild. The data analysis was done to show just
 > how much each group differed based on whether they received alarm cue
 > (induce early hatching) or blank water. This can then give us an idea
-> on how much of an impact hatching early would have on wild zebragish.
+> on how much of an impact hatching early would have on wild zebrafish.
 
 Methods
 
@@ -147,11 +147,17 @@ ggplot(data = zf_data) +
 Discussion
 
 > Because maximum velocity is paired with the overall score of different
-> body parts (low score means less developed therefore lower Vmax) the
+> body parts (low score means less developed therefore lower V-max) the
 > data suggests that early hatching via alarm cue does impact
 > development in some way. Maximum velocities were shown to be different
 > meaning that at least some parts of the bodies development was
-> impacted.
+> impacted. A lower maximum velocity would make it more difficult for
+> the hatchlings to escape and predators that they encounter, as it
+> would obviously be easier to eat slower targets. One key component
+> missing in this data is temperature. Because all trials were done at
+> the same temp, the effects of temp on development is unknown in the
+> context of alarm cue. Because of this, more trials are needed in order
+> to get accurate results.
 
 References
 
