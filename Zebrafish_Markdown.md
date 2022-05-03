@@ -23,7 +23,7 @@ Abstract
 > vs water). We can then compare body measurements (yolk height, body
 > length, fin lengths, eye dimensions) and swimming ability (average and
 > max swimming velocity.) This then allows us to show how chemical alarm
-> cues effect embryonic development in zebrafish
+> cues effect embryonic development in zebrafish.
 
 Introduction
 
