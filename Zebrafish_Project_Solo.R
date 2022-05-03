@@ -2,9 +2,9 @@
 library(tidyverse, ggplot)
 library(readxl)
 
-my_data <- read_excel( file.choose("ZebrafishQuantData_test.xlsx"))
+zf_data<- read_excel("ZebrafishQuantData_test.xlsx")
 
-zf_data<-rename(my_data, total_length = TL, 
+zf_data<-rename(zf_data, total_length = TL, 
                 yolk_height = YolkHt, tail_length = "Lttailfromtipmsc(mm)", 
                 body_cavity_lenth = BodyCavLen, trunk_total = TrunkTotal, 
                 head_depth = HeadDpth, caudal_fin_height = CaudHt, 
@@ -12,7 +12,6 @@ zf_data<-rename(my_data, total_length = TL,
                 dorsal_fin_length = DorsalFinLen, anal_fin_length = AnalFinLen, eye_height = EyeHt, 
                 eye_length = EyeLen, hatch_time_hours = "hatchtime(hours)", average_velocity = VelAvg, 
                 max_velocity = VelMax, cue_type = W1A2)
-view(zf_data)
 summary(zf_data)
 length(zf_data$max_velocity)
 #Summarizing / grouping by cue type for future code/error bars

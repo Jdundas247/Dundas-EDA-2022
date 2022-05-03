@@ -4,6 +4,8 @@ Zebrafish EDA Project
 Effects of Chemical Alarm Cue on Zebrafish Embryonic and Early Life
 Development
 
+![](images/Zebrafish.webp)
+
 Abstract
 
 > Zebrafish are able to sense alarm cue, chemicals released when another
@@ -23,157 +25,35 @@ Abstract
 > max swimming velocity.) This then allows us to show how chemical alarm
 > cues effect embryonic development in zebrafish
 
+Introduction
+
+> The effects of alarm cue on adult fish has been studied fairly well
+> and is mostly understood. Typically, a fish is attacked by a predator
+> and the damaged areas of the body secrete chemicals that let other
+> fish know (Wisenden 2015). This then causes a change in activity from
+> those who sense it involving area avoidance, taking cover below, etc.
+> (Ferrari et al. 2010). But adult fish are not the only ones capable of
+> detecting alarm cue, as embryos can change alter their hatch time in
+> order to avoid predation (Sih and Moore 1993; Laurila 2002). While
+> this allows the fish to avoid predation at that moment, the tradeoff
+> is hatching underdeveloped. This then increases the chance of being
+> killed post hatch (Warkentin 1995). The specifics on development
+> changes are not well studied. What this experiment shows is how much
+> development changes with the presence of alarm cue, and how this may
+> affect zebrafish in the wild. The data analysis was done to show just
+> how much each group differed based on whether they received alarm cue
+> (induce early hatching) or blank water. This can then give us an idea
+> on how much of an impact hatching early would have on wild zebragish.
+
 Methods
 
+> Data was acquired and sent to us from Dr. Brian Wisenden. To begin,
+> data was renamed and sorted to better fit R-Studio. Data analysis
+> involved grouping variables alongside cue type to show how each group
+> differed. Packages used involve readxl for moving the data into R and
+> tidyverse/ggplot for graphing and sorting data.
+
 > Renaming the data to fit code better.
-
-    ## Warning: Expecting numeric in T2 / R2C20: got a date
-
-    ## Warning: Expecting numeric in T3 / R3C20: got a date
-
-    ## Warning: Expecting numeric in T4 / R4C20: got a date
-
-    ## Warning: Expecting numeric in T5 / R5C20: got a date
-
-    ## Warning: Expecting numeric in T6 / R6C20: got a date
-
-    ## Warning: Expecting numeric in T7 / R7C20: got a date
-
-    ## Warning: Expecting numeric in T8 / R8C20: got a date
-
-    ## Warning: Expecting numeric in T9 / R9C20: got a date
-
-    ## Warning: Expecting numeric in T10 / R10C20: got a date
-
-    ## Warning: Expecting numeric in T11 / R11C20: got a date
-
-    ## Warning: Expecting numeric in T12 / R12C20: got a date
-
-    ## Warning: Expecting numeric in T13 / R13C20: got a date
-
-    ## Warning: Expecting numeric in T14 / R14C20: got a date
-
-    ## Warning: Expecting numeric in T15 / R15C20: got a date
-
-    ## Warning: Expecting numeric in T16 / R16C20: got a date
-
-    ## Warning: Expecting numeric in T17 / R17C20: got a date
-
-    ## Warning: Expecting numeric in T18 / R18C20: got a date
-
-    ## Warning: Expecting numeric in T19 / R19C20: got a date
-
-    ## Warning: Expecting numeric in T20 / R20C20: got a date
-
-    ## Warning: Expecting numeric in T21 / R21C20: got a date
-
-    ## Warning: Expecting numeric in T22 / R22C20: got a date
-
-    ## Warning: Expecting numeric in T23 / R23C20: got a date
-
-    ## Warning: Expecting numeric in T24 / R24C20: got a date
-
-    ## Warning: Expecting numeric in T25 / R25C20: got a date
-
-    ## Warning: Expecting numeric in T27 / R27C20: got a date
-
-    ## Warning: Expecting numeric in T28 / R28C20: got a date
-
-    ## Warning: Expecting numeric in T29 / R29C20: got a date
-
-    ## Warning: Expecting numeric in T30 / R30C20: got a date
-
-    ## Warning: Expecting numeric in T31 / R31C20: got a date
-
-    ## Warning: Expecting numeric in T32 / R32C20: got a date
-
-    ## Warning: Expecting numeric in T33 / R33C20: got a date
-
-    ## Warning: Expecting numeric in T34 / R34C20: got a date
-
-    ## Warning: Expecting numeric in T35 / R35C20: got a date
-
-    ## Warning: Expecting numeric in T36 / R36C20: got a date
-
-    ## Warning: Expecting numeric in T37 / R37C20: got a date
-
-    ## Warning: Expecting numeric in T38 / R38C20: got a date
-
-    ## Warning: Expecting numeric in T39 / R39C20: got a date
-
-    ## Warning: Expecting numeric in T40 / R40C20: got a date
-
-    ## Warning: Expecting numeric in T41 / R41C20: got a date
-
-    ## Warning: Expecting numeric in T42 / R42C20: got a date
-
-    ## Warning: Expecting numeric in T43 / R43C20: got a date
-
-    ## Warning: Expecting numeric in T44 / R44C20: got a date
-
-    ## Warning: Expecting numeric in T45 / R45C20: got a date
-
-    ## Warning: Expecting numeric in T46 / R46C20: got a date
-
-    ## Warning: Expecting numeric in T47 / R47C20: got a date
-
-    ## Warning: Expecting numeric in T48 / R48C20: got a date
-
-    ## Warning: Expecting numeric in T49 / R49C20: got a date
-
-    ## Warning: Expecting numeric in T50 / R50C20: got a date
-
-    ## Warning: Expecting numeric in T51 / R51C20: got a date
-
-    ## Warning: Expecting numeric in T52 / R52C20: got a date
-
-    ## Warning: Expecting numeric in T53 / R53C20: got a date
-
-    ## Warning: Expecting numeric in T54 / R54C20: got a date
-
-    ## Warning: Expecting numeric in T55 / R55C20: got a date
-
-    ## Warning: Expecting numeric in T56 / R56C20: got a date
-
-    ## Warning: Expecting numeric in T57 / R57C20: got a date
-
-    ## Warning: Expecting numeric in T58 / R58C20: got a date
-
-    ## Warning: Expecting numeric in T59 / R59C20: got a date
-
-    ## Warning: Expecting numeric in T60 / R60C20: got a date
-
-    ## Warning: Expecting numeric in T61 / R61C20: got a date
-
-    ## Warning: Expecting numeric in T62 / R62C20: got a date
-
-    ## Warning: Expecting numeric in T63 / R63C20: got a date
-
-    ## Warning: Expecting numeric in T64 / R64C20: got a date
-
-    ## Warning: Expecting numeric in T65 / R65C20: got a date
-
-    ## Warning: Expecting numeric in T66 / R66C20: got a date
-
-    ## Warning: Expecting numeric in T67 / R67C20: got a date
-
-    ## Warning: Expecting numeric in T68 / R68C20: got a date
-
-    ## Warning: Expecting numeric in T69 / R69C20: got a date
-
-    ## Warning: Expecting numeric in T70 / R70C20: got a date
-
-    ## Warning: Expecting numeric in T71 / R71C20: got a date
-
-    ## Warning: Expecting numeric in T72 / R72C20: got a date
-
-    ## Warning: Expecting numeric in T73 / R73C20: got a date
-
-    ## Warning: Expecting numeric in T74 / R74C20: got a date
-
-    ## Warning: Expecting numeric in T75 / R75C20: got a date
-
-    ## Warning: Expecting numeric in T76 / R76C20: got a date
 
 > The data is grouped by cue type to view how effective alarm cue was on
 > development.
@@ -193,7 +73,9 @@ print(t.score)
 
     ## [1] 2.059539
 
-> Summary for Yolk Height which will be used for figure 1.
+> Summary for Yolk Height which will be used for figure 1. The same
+> process is used for figures 3, with different variables for
+> yolk-height.
 
 ``` r
 zf_summary_yolk <-
@@ -204,6 +86,11 @@ zf_summary_yolk <-
     ci_upper_limit = mean_yolk + t.score * sem_yolk,
     ci_lower_limit = mean_yolk - t.score * sem_yolk)
 ```
+
+Results
+
+The data analysis showed a that maximum velocity differed significantly
+between cue types. This is not true for yolk height however.
 
 > Figure 1: Yolk height comparisons between cue types. Less developed
 > fish will have larger yolks.
@@ -256,3 +143,37 @@ ggplot(data = zf_data) +
     ## Warning: Ignoring unknown aesthetics: ymax, ymin
 
 ![](Zebrafish_Markdown_files/figure-gfm/Velocity-1.png)<!-- -->
+
+Discussion
+
+> Because maximum velocity is paired with the overall score of different
+> body parts (low score means less developed therefore lower Vmax) the
+> data suggests that early hatching via alarm cue does impact
+> development in some way. Maximum velocities were shown to be different
+> meaning that at least some parts of the bodies development was
+> impacted.
+
+References
+
+> Ferrari, M.C.O., Wisenden, B.D., and Chivers, D.P. 2010. Chemical
+> ecology of predator-prey interactions in aquatic ecosystems: a review
+> and prospectus. *Can J Zool.* 88: 698-724.
+>
+> Laurila, A., Pakkasmaa, S., Crochet, P.A., and Merila, J. 2002.
+> Predator-induced plasticty in early life history and morphology in two
+> anuran amphibians. *Oecologia* 132: 524-530.
+>
+> Sih, A. and Moore, R.D. 1993. Delayed hatching of salamander eggs in
+> response to enhanced larval predation risk. *Am Nat* 142: 947-960.
+>
+> Warkentin, K.M. 1995. Adaptive plasticity in hatching age: A response
+> to predation risk trade-offs. *Proc Natl Acad Sci.* 92: 3507-3510.
+>
+> Wisenden, B. D. 2015. Chemical cues that indicate risk of predation.
+> *Fish pheromones and related cues.* 131-148.
+
+Acknowledgements
+
+> Thank you to Dr. Brian Wisenden and Daniel Paulson for their roles in
+> collecting the data used for this analysis, and to Dr. Merkord for his
+> role in helping us understand data analysis and RStudio.
